@@ -1,0 +1,137 @@
+﻿@model IEnumerable<SavingLives_WebApp.Models.DonorDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<body style="background-image: url(../Images/blood_changes.png)">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DonorID)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.AspNetUser.Email)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmailID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.BloodGroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Verified)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ProofOfBloodGroup)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.DonorStatus)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastModifiedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.lastModifiedDate)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonorID)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Country)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.BloodGroup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Verified)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.ProofOfBloodGroup)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonorStatus)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.lastModifiedDate)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.DonorID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.DonorID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.DonorID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

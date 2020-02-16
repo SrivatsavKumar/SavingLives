@@ -1,0 +1,67 @@
+﻿@model IEnumerable<SavingLives_WebApp.Models.BloodGroupDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<h3>Total Blood Groups Available.</h3>
+<br />
+<body style="background-image: url(../Images/blood_changes.png)">
+    <p>
+        @*@Html.ActionLink("Create New", "Create")*@
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BloodGroupDetailsID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BloodGroupName)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastModifiedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastModifiedDate)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BloodGroupDetailsID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BloodGroupName)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.BloodGroupDetailsID }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.BloodGroupDetailsID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.BloodGroupDetailsID })
+                    </td>*@
+            </tr>
+        }
+
+    </table>
+</body>

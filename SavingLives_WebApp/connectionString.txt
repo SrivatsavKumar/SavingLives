@@ -1,0 +1,106 @@
+<add name="ModelSavingLives" connectionString="data source=SRIVATSAV\SQLEXPRESS;initial catalog=SavingLivesProj;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework" providerName="System.Data.SqlClient" />
+
+
+System.InvalidOperationException
+  HResult=0x80131509
+  Message=The navigation property 'DonorDetails' declared on type 'SavingLives_WebApp.Models.DonorDetail' cannot be the inverse of itself.
+  Source=EntityFramework
+  StackTrace:
+   at System.Data.Entity.ModelConfiguration.Configuration.Properties.Navigation.NavigationPropertyConfiguration.set_InverseNavigationProperty(PropertyInfo value)
+   at System.Data.Entity.ModelConfiguration.Configuration.OptionalNavigationPropertyConfiguration`2.WithRequired(Expression`1 navigationPropertyExpression)
+   at SavingLives_WebApp.Models.SavingLivesModel.OnModelCreating(DbModelBuilder modelBuilder) in E:\SavingLives\SavingLives_WebApp\SavingLives_WebApp\Models\SavingLivesModel.cs:line 96
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+
+
+
+[Table("employee.email_manager")]
+    public partial class email_manager
+    {
+        [Key]
+        public int email_id { get; set; }
+
+        public int employee_id { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string email { get; set; }
+
+        public int email_type { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime date_added { get; set; }
+
+        public bool deleted { get; set; }
+        [ForeignKey("email_type")]
+        public virtual email_types email_types { get; set; }
+
+        public virtual employees1 employees1 { get; set; }
+    }
+
+    [Table("employee.email_types")]
+    public partial class email_types
+    {
+        public email_types()
+        {
+            email_manager = new HashSet<email_manager>();
+        }
+
+        [Key]
+        public int email_type_id { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string email_type_name { get; set; }
+
+        public virtual ICollection<email_manager> email_manager { get; set; }
+    }
+
+
+
+
+    [Table("employee.phone_manager")]
+    public partial class phone_manager
+    {
+        [Key]
+        public int phone_id { get; set; }
+
+        public int employee_id { get; set; }
+
+        [Required]
+        [StringLength(15)]
+        public string phone_number { get; set; }
+
+        [StringLength(5)]
+        public string phone_extension { get; set; }
+
+        public int phone_type { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime date_added { get; set; }
+
+        public bool deleted { get; set; }
+
+        public virtual employees1 employees1 { get; set; }
+
+        public virtual phone_types phone_types { get; set; }
+    }
+
+    [Table("employee.phone_types")]
+    public partial class phone_types
+    {
+        public phone_types()
+        {
+            phone_manager = new HashSet<phone_manager>();
+        }
+
+        [Key]
+        public int phone_type_id { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string phone_type_name { get; set; }
+
+        public virtual ICollection<phone_manager> phone_manager { get; set; }
+    }

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SavingLives_WebApp.Models.NewRequirement>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NewRequirementID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodGroupDetail.BloodGroupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceiverDetail.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumOfUnitsReq)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodGroupDetail.BloodGroupName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceiverDetail.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumOfUnitsReq)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NewRequirementID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NewRequirementID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NewRequirementID })
+        </td>
+    </tr>
+}
+
+</table>

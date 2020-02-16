@@ -21,7 +21,7 @@ namespace SavingLives_WebApp.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("SavingLivesProject", throwIfV1Schema: false)
         {
         }
 

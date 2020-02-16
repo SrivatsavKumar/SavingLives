@@ -13,6 +13,11 @@ namespace SavingLives_WebApp
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //Adding BloodGroupDetails Controller Route
+            //routes.MapRoute(
+            //    "BloodGroupDetails", "BloodGroupDetails/{name}",
+            //    new { controller = "BloodGroupDetails", action = "Index", name = UrlParameter.Optional });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

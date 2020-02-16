@@ -5035,13 +5035,13 @@ a.badge:focus {
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;
-  color: inherit;
-  background-color: #eeeeee;
+  /*color: inherit;*/
+  /*background-color: #eeeeee;*/
 }
-.jumbotron h1,
+/*.jumbotron h1,
 .jumbotron .h1 {
   color: inherit;
-}
+}*/
 .jumbotron p {
   margin-bottom: 15px;
   font-size: 21px;
@@ -5069,10 +5069,10 @@ a.badge:focus {
     padding-right: 60px;
     padding-left: 60px;
   }
-  .jumbotron h1,
+  /*.jumbotron h1,
   .jumbotron .h1 {
-    font-size: 63px;
-  }
+    font-size: 50px;
+  }*/
 }
 .thumbnail {
   display: block;

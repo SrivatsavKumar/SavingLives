@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -168,14 +170,33 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BloodGroupDetailController.cs" />
+    <Compile Include="Controllers\DonorDetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewRequirementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRole.cs" />
+    <Compile Include="Models\AspNetUser.cs" />
+    <Compile Include="Models\AspNetUserClaim.cs" />
+    <Compile Include="Models\AspNetUserLogin.cs" />
+    <Compile Include="Models\AspNetUserRole.cs" />
+    <Compile Include="Models\AvailOfBloodInBank.cs" />
+    <Compile Include="Models\BloodGroupDetail.cs" />
+    <Compile Include="Models\BloodRequest.cs" />
+    <Compile Include="Models\BRWorkFlowActionHistory.cs" />
+    <Compile Include="Models\DonorDetail.cs" />
+    <Compile Include="Models\DonorDetailListViewModel.cs" />
+    <Compile Include="Models\DonorLastDonatedDetail.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NewRequirement.cs" />
+    <Compile Include="Models\ReceiverDetail.cs" />
+    <Compile Include="Models\SavingLivesModel.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -188,6 +209,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\blood_changes.png" />
+    <Content Include="Images\blood_donation2.png" />
+    <Content Include="Images\blood_donation3.jpg" />
+    <Content Include="Images\blood_donation4.jpg" />
+    <Content Include="Images\paper.jpg" />
+    <Content Include="Images\paper1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -235,6 +262,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\BloodGroupDetail\Create.cshtml" />
+    <Content Include="Views\BloodGroupDetail\Delete.cshtml" />
+    <Content Include="Views\BloodGroupDetail\Details.cshtml" />
+    <Content Include="Views\BloodGroupDetail\Edit.cshtml" />
+    <Content Include="Views\BloodGroupDetail\Index.cshtml" />
+    <Content Include="Views\DonorDetail\Create.cshtml" />
+    <Content Include="Views\DonorDetail\Delete.cshtml" />
+    <Content Include="Views\DonorDetail\Details.cshtml" />
+    <Content Include="Views\DonorDetail\Edit.cshtml" />
+    <Content Include="Views\DonorDetail\Index.cshtml" />
+    <Content Include="Views\NewRequirement\Create.cshtml" />
+    <Content Include="Views\NewRequirement\Delete.cshtml" />
+    <Content Include="Views\NewRequirement\Details.cshtml" />
+    <Content Include="Views\NewRequirement\Edit.cshtml" />
+    <Content Include="Views\NewRequirement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

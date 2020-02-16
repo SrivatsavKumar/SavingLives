@@ -1,31 +1,78 @@
-﻿@{
+﻿@model IEnumerable<SavingLives_WebApp.Models.DonorDetailListViewModel>
+
+@*@{
     ViewBag.Title = "Home Page";
-}
+}*@
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<style>
+    .donordetails{
+        background: url(../Images/paper1.jpg);
+        border: groove; 
+        border-radius: 10px;
+        padding-left: 50px;
+    }
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    input[type=search]
+    {
+        border: 2px solid red;
+        border-radius: 4px;
+        padding: 4px 7px 4px 7px;
+    }
+
+    input[type=submit]
+    {
+        background-color: #ff6666;
+        border: 2px solid black;
+        border-radius: 4px;
+        padding: 4px 7px 4px 7px;
+    }
+</style>
+
+    <body>
+        <div class="jumbotron" style="background-color: #ff6666">
+            <h1>SavingLives</h1>
+            <p class="lead">SavingLives establishes connection between Receivers that are in search for Blood and Donors that are willing to donote and help Saving Precious Lives</p>
+            <br />
+            <br />
+            <p><a href="#" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        </div>
+
+        <div class="row">
+
+            @*<h4>Below are the Blood Groups that are presently Active for donation.</h4>
+            <br />
+            @foreach(var item in Model)
+            {
+        <table>
+            <tr>
+                <td style="color: red">
+                    @item.BloodGroup:
+                </td>
+                <td>
+                    @item.City.
+                </td>
+            </tr>
+        </table>
+            }*@
+            <br />
+            <form method="get">
+                <input type="search" name="searchTerm" />
+                <b><input type="submit" value="Search By City" /></b>
+            </form>
+            <br />
+            <div class="donordetails">
+                @foreach (var item in Model)
+                {
+                    <div>
+                        <h4 style="color: red">@item.BloodGroup</h4>
+                        <div>
+                            <h4>@item.City, @item.State</h4>
+                        </div>
+                        <hr />
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </body>
